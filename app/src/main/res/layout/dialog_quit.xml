@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/description_padding"
+    android:background="@drawable/background_shape_event"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/tv_dialog_quit_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/card_padding"
+        android:textAlignment="center"
+        android:text="@string/dialog_quit_title"
+        android:textSize="@dimen/large_text_size"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_dialog_quit_btns"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/card_padding"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_dialog_quit_title">
+
+        <Button
+            android:id="@+id/btn_dialog_quit_quit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:text="@string/quit"
+            android:textSize="@dimen/standard_text_size"
+            android:textColor="@android:color/white"
+            android:background="@drawable/background_shape_button" />
+
+        <Button
+            android:id="@+id/btn_dialog_quit_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/small_margin"
+            android:text="@string/cancel"
+            android:textSize="@dimen/standard_text_size"
+            android:textColor="@android:color/white"
+            android:background="@drawable/background_shape_button" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,4 +37,7 @@
     <string name="dialog_names_title">Adventurer Names</string>
     <string name="end_turn">End Turn</string>
     <string name="skip_turn">Skip Turn</string>
+    <string name="dialog_quit_title">Are you sure you want to quit?</string>
+    <string name="quit">Quit</string>
+    <string name="cancel">Cancel</string>
 </resources>

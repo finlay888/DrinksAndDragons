@@ -3,7 +3,10 @@ package uk.co.nightowl.platforms.drinksdragons.activities
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
 import android.app.Activity
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +19,7 @@ import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.dialog_quit.*
 import uk.co.nightowl.platforms.drinksdragons.R
 import uk.co.nightowl.platforms.drinksdragons.adapters.AcquiredAdapter
 import uk.co.nightowl.platforms.drinksdragons.objects.Treasure.setTreasure
@@ -512,6 +516,20 @@ class MainActivity : AppCompatActivity() {
             playerList[playerTurn] = mCharacter
             Log.i("onActivityResult", playerList[0].name)
         }
+    }
+
+    override fun onBackPressed() {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.dialog_quit)
+        dialog.btn_dialog_quit_cancel.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.btn_dialog_quit_quit.setOnClickListener {
+            super.onBackPressed()
+        }
+        dialog.setCanceledOnTouchOutside(true)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.show()
     }
 
     private fun calculateStats(){
