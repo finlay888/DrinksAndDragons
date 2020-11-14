@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".activities.SplashActivity">
+    
+    <ImageView
+        android:id="@+id/iv_splash_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/beer_flagon"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/image_content_description"
+        android:layout_marginHorizontal="@dimen/splash_icon_margin"
+        android:layout_marginBottom="@dimen/splash_icon_marginBottom"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        tools:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tv_splash_title_drinks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/drinks"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/splash_title_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6"
+        tools:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tv_splash_title_and"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/and"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/splash_title_text_size"
+        app:layout_constraintTop_toBottomOf="@id/tv_splash_title_drinks"
+        tools:visibility="gone"/>
+    
+    <TextView
+        android:id="@+id/tv_splash_title_dragons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dragons"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/splash_title_text_size"
+        app:layout_constraintTop_toBottomOf="@id/tv_splash_title_and" 
+        tools:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/iv_swords_icon"
+        android:layout_width="@dimen/swords_image_size"
+        android:layout_height="@dimen/swords_image_size"
+        android:src="@drawable/cartoon_crossed_swords"
+        android:contentDescription="@string/image_content_description"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.2"/>
+
+    <LinearLayout
+        android:id="@+id/ll_splash_menu_btns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/menu_btns_marginTop"
+        android:gravity="center"
+        android:visibility="gone"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/iv_swords_icon"
+        tools:visibility="visible">
+
+        <Button
+            android:id="@+id/btn_new_game"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/menu_btn_marginVertical"
+            android:layout_marginHorizontal="@dimen/menu_btn_marginHorizontal"
+            android:text="@string/new_game"
+            android:textSize="@dimen/standard_text_size"
+            android:textColor="@android:color/white"
+            android:background="@drawable/background_shape_button"/>
+
+        <org.angmarch.views.NiceSpinner
+            android:id="@+id/spinner_players"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/menu_btn_marginVertical"
+            android:layout_marginHorizontal="@dimen/menu_btn_marginHorizontal"/>
+
+        <Button
+            android:id="@+id/btn_tutorial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/menu_btn_marginVertical"
+            android:layout_marginHorizontal="@dimen/menu_btn_marginHorizontal"
+            android:text="@string/how_to_play"
+            android:textSize="@dimen/standard_text_size"
+            android:textColor="@android:color/white"
+            android:background="@drawable/background_shape_button"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

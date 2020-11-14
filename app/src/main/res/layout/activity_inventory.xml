@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.InventoryActivity"
+    android:background="@color/colorPrimaryDark">
+
+    <LinearLayout
+        android:id="@+id/ll_stats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/card_padding"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/stats_text_size"
+                android:textColor="@android:color/black"
+                android:text="@string/fight"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/stats_text_size"
+                android:textColor="@android:color/black"
+                android:text="@string/separator"/>
+            <TextView
+                android:id="@+id/tv_fight_stat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/stats_text_size"
+                android:textColor="@android:color/black"
+                tools:text="30"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/card_padding"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/stats_text_size"
+                android:textColor="@android:color/black"
+                android:text="@string/charm"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/stats_text_size"
+                android:textColor="@android:color/black"
+                android:text="@string/separator"/>
+            <TextView
+                android:id="@+id/tv_charm_stat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/stats_text_size"
+                android:textColor="@android:color/black"
+                tools:text="30"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:background="@color/colorAccent"
+        app:layout_constraintTop_toBottomOf="@id/ll_stats"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/divider_top"
+        app:layout_constraintBottom_toTopOf="@id/divider_bottom"
+        android:baselineAligned="false">
+
+        <ImageView
+            android:id="@+id/iv_weapon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/image_content_description"
+            android:src="@drawable/outline_weapon"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/iv_helmet"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:src="@drawable/outline_head"
+                android:contentDescription="@string/image_content_description"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/iv_chest"/>
+            <ImageView
+                android:id="@+id/iv_chest"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/outline_chest"
+                android:contentDescription="@string/image_content_description"
+                app:layout_constraintTop_toBottomOf="@id/iv_helmet"
+                app:layout_constraintBottom_toTopOf="@id/iv_legs"/>
+            <ImageView
+                android:id="@+id/iv_legs"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/outline_leg"
+                android:contentDescription="@string/image_content_description"
+                app:layout_constraintTop_toBottomOf="@id/iv_chest"
+                app:layout_constraintBottom_toTopOf="@id/iv_feet"/>
+            <ImageView
+                android:id="@+id/iv_feet"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/outline_feet"
+                android:contentDescription="@string/image_content_description"
+                app:layout_constraintTop_toBottomOf="@id/iv_legs"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/iv_trinket"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/outline_trinket"
+            android:contentDescription="@string/image_content_description"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@id/rv_treasure_list"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_treasure_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingVertical="10dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

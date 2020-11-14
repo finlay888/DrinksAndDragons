@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0c4091</color>
+    <color name="colorPrimaryDark">#051c40</color>
+    <color name="colorAccent">#cf7311</color>
+    <color name="colorEvent">#1fad37</color>
+    <color name="colorTreasure">#ffea00</color>
+    <color name="colorGray">#666666</color>
+    <color name="colorEpic">#ae2ed9</color>
+    <color name="colorRare">#592ed9</color>
+</resources>

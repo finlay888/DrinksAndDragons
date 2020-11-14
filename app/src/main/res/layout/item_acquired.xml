@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    tools:background="@color/colorPrimary">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.75"
+        android:gravity="end"
+        android:text="@string/treasure_acquired"
+        android:textSize="@dimen/standard_text_size"
+        android:textColor="@android:color/white"/>
+    <TextView
+        android:id="@+id/tv_treasure_acquired"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="start"
+        android:textSize="@dimen/standard_text_size"
+        android:textColor="@android:color/white"/>
+</LinearLayout>

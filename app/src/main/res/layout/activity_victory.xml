@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".activities.VictoryActivity">
+
+    <TextView
+        android:id="@+id/tv_victory_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/victory_margin"
+        android:gravity="center"
+        android:text="@string/victory_top"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/victory_top_text_size"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/s_legend"
+        android:contentDescription="@string/image_content_description"
+        app:layout_constraintTop_toBottomOf="@id/tv_victory_top"
+        app:layout_constraintBottom_toTopOf="@id/tv_victory_bottom"/>
+
+    <TextView
+        android:id="@+id/tv_victory_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/victory_margin"
+        android:gravity="center"
+        android:text="@string/victory_bottom"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/victory_bottom_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

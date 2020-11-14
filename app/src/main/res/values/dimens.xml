@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_margin">20dp</dimen>
+    <dimen name="card_stroke_width">8dp</dimen>
+    <dimen name="card_corner_radius">20dp</dimen>
+    <dimen name="card_padding">15dp</dimen>
+    <dimen name="event_name_margin">15dp</dimen>
+    <dimen name="event_name_text_size">20sp</dimen>
+    <dimen name="standard_text_size">17sp</dimen>
+    <dimen name="large_text_size">20sp</dimen>
+    <dimen name="largest_text_size">22sp</dimen>
+    <dimen name="decision_btn_margin_right">5dp</dimen>
+    <dimen name="decision_btn_padding">10dp</dimen>
+    <dimen name="splash_icon_margin">70dp</dimen>
+    <dimen name="splash_icon_marginBottom">200dp</dimen>
+    <dimen name="splash_title_text_size">55sp</dimen>
+    <dimen name="swords_image_size">250dp</dimen>
+    <dimen name="menu_btn_marginHorizontal">50dp</dimen>
+    <dimen name="menu_btn_marginVertical">15dp</dimen>
+    <dimen name="menu_btns_marginTop">25dp</dimen>
+    <dimen name="battle_swords_size">200dp</dimen>
+    <dimen name="level_text_size">22sp</dimen>
+    <dimen name="rv_inventory_height">200dp</dimen>
+    <dimen name="inventory_pic_width">150dp</dimen>
+    <dimen name="small_margin">5dp</dimen>
+    <dimen name="treasure_stroke_width">5dp</dimen>
+    <dimen name="stats_text_size">18sp</dimen>
+    <dimen name="divider_height">5dp</dimen>
+    <dimen name="victory_top_text_size">35sp</dimen>
+    <dimen name="victory_margin">35dp</dimen>
+    <dimen name="victory_bottom_text_size">40sp</dimen>
+    <dimen name="treasure_counter_padding">8dp</dimen>
+    <dimen name="treasure_image_size">30dp</dimen>
+    <dimen name="treasure_acquired_margin">30dp</dimen>
+    <dimen name="description_padding">30dp</dimen>
+    <dimen name="status_image_size">200dp</dimen>
+</resources>

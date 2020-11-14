@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/background_shape_charm"
+    android:padding="16dp"
+    android:layout_marginHorizontal="10dp">
+    <ImageView
+        android:id="@+id/iv_item_equipment"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/basic_sword"
+        android:contentDescription="@string/image_content_description"/>
+
+    <TextView
+        android:id="@+id/tv_equipment_rating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/standard_text_size"
+        tools:textColor="@color/colorGray"
+        tools:text="Common"/>
+
+    <Button
+        android:id="@+id/btn_inspect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:background="@drawable/background_shape_button"
+        android:text="@string/view"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

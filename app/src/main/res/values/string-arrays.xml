@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="players">
+        <item>1 Player</item>
+        <item>2 Adventures</item>
+        <item>3 Archaeologists</item>
+        <item>4 Legends</item>
+        <item>5 Heroes</item>
+        <item>6 Paladins</item>
+    </string-array>
+</resources>
