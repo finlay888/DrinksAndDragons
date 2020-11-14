@@ -159,7 +159,7 @@ object Events {
             "You poke the cyclops in it's eye and it runs off screaming, give out 2 drinks.",
             110, 75, 60)
         mEvents.add(cyclopsEvent)
-        val rMilitiaBs = BadStuff(-1, "", 0, "", "Everybody drinks, Fruit may be thrown at you, Lose a level")
+        val rMilitiaBs = BadStuff(-1, "", 0, "", "Everybody drinks, Fruit may be thrown at you, Lose a point")
         val rMilitiaEvent = Event("Royal Guardsmen", R.drawable.e_royal_militia,
             "A small unit of royal guardsmen come charging down the hill towards you, looking tough and angry, " +
                     "they mean business.", "You are arrested and put in the stocks to be mocked and made fun of.",
