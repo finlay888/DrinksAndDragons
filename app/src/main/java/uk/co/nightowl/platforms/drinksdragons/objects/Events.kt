@@ -364,7 +364,19 @@ object Events {
             null, 2, "You barter with the vampire and convince it your blood tastes rubbish, give out 3 drinks",
             "You throw some garlic and the vampire and it scampers off hissing, give out 2 drinks", 50, 60, 60)
         mEvents.add(vampireEvent)
-
+        val clearPOneOutcome1 = Outcome(0, -1, null, "", 0, "Sucks to be you, it tastes like soap and you throw up everywhere, " +
+                "drink 2 and lose a level")
+        val clearPOneOutcome2 = Outcome(0, 0, null, "", 0, "You walk away and leave the potion")
+        val clearPOne = SpecialEvent("Drink", "Leave it", clearPOneOutcome1, clearPOneOutcome2)
+        val clearPOneEvent = Event("Mystery Potion", R.drawable.c_clear_potion, "You come across a suspicious looking, mysterious looking " +
+                "potion.", "", null, clearPOne, 0, "", "")
+        mEvents.add(clearPOneEvent)
+        val clearP2Outcome1 = Outcome(0, 1, null, "", 0, "Wow, that was bloody delicious!! Gain a level, give out 2 drinks")
+        val clearP2Outcome2 = Outcome(0, 0, null, "", 0, "You walk away and leave the potion")
+        val clearP2 = SpecialEvent("Drink", "Leave it", clearP2Outcome1, clearP2Outcome2)
+        val clearP2Event = Event("Mystery Potion", R.drawable.c_clear_potion, "You come across a suspicious looking, mysterious looking " +
+                "potion.", "", null, clearP2, 0, "", "")
+        mEvents.add(clearP2Event)
         return mEvents
     }
 }
