@@ -52,6 +52,7 @@ class SplashActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
         btn_tutorial.setOnClickListener {
             btn_tutorial.startAnimation(btnAnim)
+            startActivity(Intent(this, HowToPlayActivity::class.java))
         }
 
     }
