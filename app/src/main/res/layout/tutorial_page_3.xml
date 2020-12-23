@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="@dimen/tutorial_padding"
+    android:paddingTop="@dimen/tutorial_padding"
+    android:paddingLeft="@dimen/tutorial_padding"
+    android:paddingRight="@dimen/tutorial_padding"
     android:background="@color/colorPrimaryDark">
     <ImageView
         android:id="@+id/iv_tutorial1"
@@ -23,6 +25,6 @@
         android:textSize="@dimen/large_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75"
+        app:layout_constraintVertical_bias="0.9"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

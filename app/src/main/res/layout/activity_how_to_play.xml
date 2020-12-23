@@ -24,7 +24,18 @@
         android:id="@+id/vp_tutorial"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+
         app:layout_constraintTop_toBottomOf="@+id/tv_tutorial_title"
+        app:layout_constraintBottom_toTopOf="@id/tl_tutorial"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_tutorial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/card_padding"
+        app:tabBackground="@drawable/tab_selector"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
