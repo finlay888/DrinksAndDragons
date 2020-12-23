@@ -240,13 +240,12 @@ object Events {
         mEvents.add(lovePotionEvent)
         val eatSlugsCurse = Curse("", 0, 0)
         val eatSlugsEvent = Event("Eat Slugs!!", R.drawable.c_eat_slugs, "You have been enchanted!! You now have a wild hankering " +
-                "for slimy slugs, miss a turn", "", null, null, 0, "", "",
+                "for slimy slugs, that is all", "", null, null, 0, "", "",
             0,0,0, eatSlugsCurse)
         mEvents.add(eatSlugsEvent)
         val hypnotizedCurse = Curse("", 0, 0)
-        val hypnotizedEvent = Event("Hypnotized!!", R.drawable.c_hypnotized, "You have been hypnotised!! " +
-                "Next time someone must take a shot, you do it instead, if multiple people have " +
-                "to take shots, nobody except you has to drink for one person", "", null, null, 0, "",
+        val hypnotizedEvent = Event("Hypnotized!!", R.drawable.c_hypnotized, "You have been hypnotized!! " +
+                "You must drink for the adjacent players instead of themselves for 1 round", "", null, null, 0, "",
         "", 0, 0, 0, hypnotizedCurse)
         mEvents.add(hypnotizedEvent)
         val diseasedCurse = Curse("", 0, 0)
@@ -364,6 +363,64 @@ object Events {
             null, 2, "You barter with the vampire and convince it your blood tastes rubbish, give out 3 drinks",
             "You throw some garlic and the vampire and it scampers off hissing, give out 2 drinks", 50, 60, 60)
         mEvents.add(vampireEvent)
+        val batsBs = BadStuff(0, "", 0, "", "Drink 2")
+        val batsEvent = Event("Swarm of Bats", R.drawable.e_bats, "The nearby trees rustle as a " +
+                "swarm of bats erupts from the treeline", "The bats nibble you a bit", batsBs, null,
+            1, "You distract the bats with some fruit and are unscathed by the swarm", "You cut one of the bats out of " +
+                    "the air and the rest give up, you are victorious!, give out 2 drinks", 55, 50, 60)
+        mEvents.add(batsEvent)
+        val lavaFlow = Event("Lava Flow!!", R.drawable.c_lava_floor, "Surprise lava flow!! Every body must get off the ground," +
+                "the last player touching the ground drinks twice. Everyone must remain off the floor until this card is drawn again, touching the floor" +
+                "results in another 2 drinks","", null, null, 0, "", "", 0,
+            0, 0, Curse())
+        mEvents.add(lavaFlow)
+        val mexicanStandoff = Event("Mexican Standoff!!", R.drawable.c_mexican_standoff, "You crack some bad jokes and land yourself in a standoff " +
+                "with the other players, each player must play rock paper scissors with each other, every loss results in 1 drink",
+            "", null, null, 0, "", "", 0, 0, 0,
+            Curse())
+        mEvents.add(mexicanStandoff)
+        val goblinBs = BadStuff(-1, "", 0, "", "Lose 1 Point, Drink 2")
+        val goblinEvent = Event("A Greedy Goblin", R.drawable.e_goblin, "A single goblin blocks your path, it spouts jibberish and waves it's knife",
+            "The goblin stabs you and bites your ankle", goblinBs, null, 1,
+            "You barter with the goblin and give it a shiny metal scrap, give out 2 drinks",
+            "You punch the goblin in the eye and it cries, it runs off giving a pathetic whimper", 45, 60, 60)
+        mEvents.add(goblinEvent)
+        val goblin2Bs = BadStuff(-2, "", 0, "", "Lose 2 Points, Drink 4")
+        val goblin2Event = Event("A Greedy Goblin", R.drawable.e_goblin, "A single goblin blocks your path, it spouts jibberish and waves it's knife",
+            "It turns out it's a super goblin!! It's eyes go red and it rages out, beating you senseless", goblin2Bs, null, 1,
+            "You barter with the goblin and give it a shiny metal scrap, give out 2 drinks",
+            "The goblin rages out but a punch in the nose knocks it out instantly", 75, 60, 60)
+        mEvents.add(goblin2Event)
+        val goblin3Bs = BadStuff(-1, "", 0, "", "Lose 1 Points, Drink 3")
+        val goblin3Event = Event("A Greedy Goblin", R.drawable.e_goblin, "A single goblin blocks your path, it spouts jibberish and waves it's knife",
+            "The goblin has a way with words and breaks your spirit, making you sad as hell", goblin3Bs, null, 1,
+            "You give the goblin a trinket, give out 3 drinks",
+            "The goblin rages out but a punch in the nose knocks it out instantly", 50, 75, 60)
+        mEvents.add(goblin3Event)
+        val frozen = Event("Frozen!!", R.drawable.e_frozen, "You trip a wire and are frozen by a magical trap, " +
+                "you cannot speak till your next turn, every time you speak you must drink twice", "", null,
+            null, 0, "", "", 0, 0, 0, Curse())
+        mEvents.add(frozen)
+        val goblinPrinceBs = BadStuff(-3, "", 0, "", "Lose 3 Points, Drink 4")
+        val goblinPrince = Event("Goblin Princeling", R.drawable.e_goblin_prince, "A shiny goblin prince blocks your path and " +
+                "tries to shoo you away as it turns its nose up at you snootily", "The goblin prince has you arrested and spanked, how embarrassing",
+            goblinPrinceBs, null, 4, "You beat the prince in a drinking game and he decides you're sound, everyone drinks 2",
+            "You take the goblin princes crown off his head and hit him with it, now that was pretty disrespectful, give out a shot",
+            85, 90, 60)
+        mEvents.add(goblinPrince)
+        val goblinGangBs = BadStuff(-1, "", 0, "t", "Lose your Trinket, Lose 2 Points, Drink 2")
+        val goblinGang = Event("Goblin Gang", R.drawable.e_goblin_gang, "A small gang of goblins scuttle towards you, " +
+                "probably looking to get their hands on your goods and such", "The goblins overpower you, stabbing your ankles and stealing your stuff", goblinGangBs, null,
+            3, "You do a really good dog impression and scare the goblins away, give out 3 drinks and bark a bit",
+            "You bash and stab the goblins, and eventually they yield, trading treasure for their lives, give out 3 drinks",
+            75, 75, 60)
+        mEvents.add(goblinGang)
+        val goldDiggerBs = BadStuff(0, "", 0, "", "Drink 3 or hand out a coin if you have one")
+        val goldDigger = Event("Gold Digger", R.drawable.e_gold_digger, "A hole in the ground appears in front of you, a gold digger pops it's head out and " +
+                "looks at you", "The gold digger hits you with its pickaxe and leaves, along with some of your belongings",
+            goldDiggerBs, null, 3, "You charm the digger with your sweet talk and charm and it gives you its loot",
+            "You slice the gold digger in half and it looks pretty mad about it", 60, 60, 60, null)
+        mEvents.add(goldDigger)
         val clearPOneOutcome1 = Outcome(0, -1, null, "", 0, "Sucks to be you, it tastes like soap and you throw up everywhere, " +
                 "drink 2 and lose a level")
         val clearPOneOutcome2 = Outcome(0, 0, null, "", 0, "You walk away and leave the potion")

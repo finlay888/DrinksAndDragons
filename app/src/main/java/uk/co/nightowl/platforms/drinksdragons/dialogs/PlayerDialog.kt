@@ -75,22 +75,22 @@ abstract class PlayerDialog(
             characterArray.add(Character(et_player_name_three.text.toString()))
         }
 
-        if (et_player_name_two.text.isNullOrEmpty() && playerNum > 3){
+        if (et_player_name_four.text.isNullOrEmpty() && playerNum > 3){
             characterArray.add(Character("Jamie Of Oliver"))
         }else if (playerNum > 3){
-            characterArray.add(Character(et_player_name_two.text.toString()))
+            characterArray.add(Character(et_player_name_four.text.toString()))
         }
 
-        if (et_player_name_two.text.isNullOrEmpty() && playerNum > 4){
+        if (et_player_name_five.text.isNullOrEmpty() && playerNum > 4){
             characterArray.add(Character("Samuel The Great"))
         }else if (playerNum > 4){
-            characterArray.add(Character(et_player_name_two.text.toString()))
+            characterArray.add(Character(et_player_name_five.text.toString()))
         }
 
-        if (et_player_name_two.text.isNullOrEmpty() && playerNum > 5){
+        if (et_player_name_six.text.isNullOrEmpty() && playerNum > 5){
             characterArray.add(Character("Sean Of Connery"))
         }else if (playerNum > 5){
-            characterArray.add(Character(et_player_name_two.text.toString()))
+            characterArray.add(Character(et_player_name_six.text.toString()))
         }
     }
 }

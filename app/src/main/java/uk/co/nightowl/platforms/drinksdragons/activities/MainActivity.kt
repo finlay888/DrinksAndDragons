@@ -287,9 +287,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun nextTurn(){
-        if (playerTurn >= 0){
-            mCharacter = playerList[playerTurn]
-        }
         if (playerTurn == playerList.size - 1){
             playerTurn = 0
             Log.i("woof", playerTurn.toString())
