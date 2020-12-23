@@ -138,24 +138,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        /*fl_event_card.setOnClickListener {
-            if (currentEvent!!.badStuff != null){
-                isFront = if(isFront){
-                    frontAnim.setTarget(cl_card_front)
-                    backAnim.setTarget(cl_card_back)
-                    frontAnim.start()
-                    backAnim.start()
-                    false
-                }else{
-                    frontAnim.setTarget(cl_card_back)
-                    backAnim.setTarget(cl_card_front)
-                    frontAnim.start()
-                    backAnim.start()
-                    true
-                }
-            }
-        }*/
-
         btn_inventory.setOnClickListener {
             val intent = Intent(this, InventoryActivity::class.java)
             intent.putExtra(Constants.CHARACTER, mCharacter)
@@ -439,6 +421,8 @@ class MainActivity : AppCompatActivity() {
                 2 -> iv_outcome_image.setImageResource(R.drawable.death_two)
                 3 -> iv_outcome_image.setImageResource(R.drawable.death_three)
             }
+            removeTreasure(currentEvent!!.badStuff!!.affectGear)
+            affectStat(currentEvent!!.badStuff!!.affectStat, currentEvent!!.badStuff!!.affectStatSize)
         }
         levelCheck()
     }
@@ -455,30 +439,44 @@ class MainActivity : AppCompatActivity() {
         statusImageSetter(mCharacter.level)
     }
 
+    private fun affectStat(type: String, value: Int){
+        when(type){
+            "f" -> {
+                mCharacter.bFight += value
+            }
+            "c" -> {
+                mCharacter.bCharm += value
+            }
+            "r" -> {
+                mCharacter.bRun += value
+            }
+        }
+    }
+
     private fun removeTreasure(type : String){
         when(type){
             "h" -> {
-                inventory.remove(mCharacter.head)
+                mCharacter.inventory.remove(mCharacter.head)
                 mCharacter.head = null
             }
             "c" -> {
-                inventory.remove(mCharacter.chest)
+                mCharacter.inventory.remove(mCharacter.chest)
                 mCharacter.chest = null
             }
             "l" -> {
-                inventory.remove(mCharacter.legs)
+                mCharacter.inventory.remove(mCharacter.legs)
                 mCharacter.legs = null
             }
             "f" -> {
-                inventory.remove(mCharacter.feet)
+                mCharacter.inventory.remove(mCharacter.feet)
                 mCharacter.feet = null
             }
             "w" -> {
-                inventory.remove(mCharacter.weapon)
+                mCharacter.inventory.remove(mCharacter.weapon)
                 mCharacter.weapon = null
             }
             "t" -> {
-                inventory.remove(mCharacter.trinket)
+                mCharacter.inventory.remove(mCharacter.trinket)
                 mCharacter.trinket = null
             }
         }
