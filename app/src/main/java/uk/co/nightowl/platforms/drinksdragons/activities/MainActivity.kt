@@ -22,6 +22,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_quit.*
 import uk.co.nightowl.platforms.drinksdragons.R
 import uk.co.nightowl.platforms.drinksdragons.adapters.AcquiredAdapter
+import uk.co.nightowl.platforms.drinksdragons.dialogs.OutcomeDialog
+import uk.co.nightowl.platforms.drinksdragons.dialogs.PlayerDialog
 import uk.co.nightowl.platforms.drinksdragons.objects.Treasure.setTreasure
 import uk.co.nightowl.platforms.drinksdragons.models.*
 import uk.co.nightowl.platforms.drinksdragons.objects.Constants
@@ -356,25 +358,20 @@ class MainActivity : AppCompatActivity() {
 
     private fun specialResult (outcome : Outcome){
         mCharacter.level += outcome.level
-        if(mCharacter.level >= 10){
-            val intent = Intent(this, VictoryActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
+        levelCheck()
+        val dialog =  object : OutcomeDialog(this, outcome.Description){}
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.show()
         if (outcome.special != null){
             mCharacter.inventory.add(outcome.special)
         }
-        when(outcome.statType){
-            "f" -> mCharacter.bFight += outcome.statEffect
-            "c" -> mCharacter.bCharm += outcome.statEffect
-            "r" -> mCharacter.bRun += outcome.statEffect
-        }
-        tv_level_number.text = mCharacter.level.toString()
+        affectStat(outcome.statType, outcome.statEffect)
     }
 
     private fun curseResult(){
         val model = currentEvent!!.curse
         mCharacter.level += model!!.level
+        statusImageSetter(mCharacter.level)
         if (model.treasureAffect.isNotEmpty()){
             removeTreasure(model.treasureAffect)
         }

@@ -29,20 +29,20 @@ object Events {
             "You stomp on the slimes single eye and it dies instantly, melting into the ground and leaving some loot.",
             50, 60, 60)
         mEvents.add(oneEyedSlimeEvent)
-        val skeletonArmyBs = BadStuff(-2, "a", 5, "chest", "Take 2 shots, " +
-                "Lose 2 Points, Lose an item of clothing")
+        val skeletonArmyBs = BadStuff(-2, "", 0, "h", "Take 2 shots, " +
+                "Lose 2 Points, Lose your hat")
         val skeletonArmyEvent = Event("You stumble upon a small army of skeletons!",
             R.drawable.e_skeleton_army, "They're boney, they smell a bit " +
                     "and they don't look too friendly, they're running towards you swords drawn and bones rattling",
-            "The skeletons overpower you, beat you up and steal your clothes. There was just simply " +
+            "The skeletons overpower you, beat you up and steal your hat. There was just simply " +
                     "too many of them.", skeletonArmyBs, null,3,
             "By some miracle you convince the skeletons you are on their side by clacking some bones together, " +
                     "take a shot to pay for your miracle",
             "After several minutes of bashing and slashing you defeat all the skeletons and they are reduced to a pile of bones, " +
                     "In celebration, hand out 5 drinks", 100, 120, 50)
         mEvents.add(skeletonArmyEvent)
-        val teenDragonBs = BadStuff(0, "c", 5, "n", "Drink 2, Feel a " +
-                "bit humiliated")
+        val teenDragonBs = BadStuff(0, "c", -5, "n", "Drink 2, Feel a " +
+                "bit humiliated, Charm Decreased By 5")
         val teenDragonEvent = Event("Moody teen dragon", R.drawable.e_rebellious_teen_dragon,
             "He's mean, a bit green and he's just discovered smoking, as you try and pass he angrily tokes his" +
                     " cigarettes and glares at you and begins to move closer.", "He sucker punches you in the nose " +
@@ -76,7 +76,7 @@ object Events {
             "You give the tree a big hug and put a smile on it's face, lifting it's spirits. Give out 2 drinks.",
             "You hack and slash and chop the tree down, you big meanie, give out 4 drinks.", 100, 65, 30)
         mEvents.add(mMahoganyEvent)
-        val blueSOctopusBs = BadStuff(0, "r", 5, "n", "Drink 2, Athleticism decreased")
+        val blueSOctopusBs = BadStuff(0, "r", -5, "n", "Drink 2, Run Decreased by 5")
         val blueSOctopusEvent = Event("A Small Blue Octopus", R.drawable.e_blue_small_octopus,
             "A small slithery octopus slides towards you looking rather curious.",
             "Your feet are wrapped in tentacles and your ankles are covered in sucker marks.",
@@ -84,17 +84,17 @@ object Events {
             "You give them a snack from your rations and shake a tentacle, Give out 2 drinks",
             "You drop kick the poor little octopus into a nearby river. Take a drink you meanie.", 45, 50, 50)
         mEvents.add(blueSOctopusEvent)
-        val drunkardO1 = Outcome(1, 1, null, "", 0, "You impressively out drink the drunkard")
-        val drunkard02 = Outcome(0, 0, null, "", 0, "You're a lil bitch, drink 1")
+        val drunkardO1 = Outcome(1, 1, null, "", 0, "You impressively out drink the drunkard, you gain a point and give out 1 drink")
+        val drunkard02 = Outcome(0, 0, null, "", 0, "You refuse cause you're a lil bitch, drink 1")
         val drunkardSpecial = SpecialEvent("Drink", "Refuse", drunkardO1, drunkard02)
         val drunkardEvent = Event("Drinking Competition", R.drawable.e_drunkard,
-            "A slurring drunk challenges you to a drink off. Drink 2 shots to gain a level or refuse", "",
+            "A slurring drunk challenges you to a drink off. Drink 2 shots to gain a point or refuse", "",
             null, drunkardSpecial, 0, "", "")
         mEvents.add(drunkardEvent)
         val blizzard01 = Outcome(0, 0, null, "0", 0, "The alcohol" +
-                " keeps you warm and cosy")
+                " keeps you warm and cosy, allowing you to brave the blizzard")
         val blizzard02 = Outcome(0, -1, null, "0", 0, "You take shelter " +
-                "in a nearby cave")
+                "in a nearby cave but lose a status point")
         val blizzardSpecial = SpecialEvent("Drink", "Retreat", blizzard01, blizzard02)
         val blizzardEvent = Event("Freezing Blizzard", R.drawable.e_blizzard,
             "One second it's fine, the next you are caught in the worst blizzard in decades! " +
@@ -103,11 +103,11 @@ object Events {
         mEvents.add(blizzardEvent)
         val communistManifesto = Treasure("Communist Manifesto", "Go forth and seize the means of production",
             "t", 2, 5, 5, 0, R.drawable.t_communist_manifesto)
-        val riot01 = Outcome(0, 0, communistManifesto, "", 0, "Death to the west! Miss a turn")
+        val riot01 = Outcome(0, 0, communistManifesto, "", 0, "Death to the west! You receive a copy of the communist manifesto!")
         val riot02 = Outcome(0, 0, null, "", 0, "You sneak past the riot and continue on your journey, drink 2 capitalist scum")
         val riotSpecial = SpecialEvent("Riot", "Sneak", riot01, riot02)
         val riotEvent = Event("Street Riot", R.drawable.e_street_riot, "The city you were staying in is in " +
-                "uproar with peasants taking to the streets in a brutal riot, take part in the riot and miss a turn or sneak past", "",
+                "uproar with peasants taking to the streets in a brutal riot, take part in the riot or sneak past", "",
             null, riotSpecial, 0, "", "", 0, 0, 0)
         mEvents.add(riotEvent)
         val dBrigadeBs = BadStuff(-3, "", 0, "", "Finish your drink, Lose 3 Points")
@@ -119,12 +119,12 @@ object Events {
         mEvents.add(dBrigadeEvent)
         val skeletonGBs = BadStuff(0, "",0,"w", "Drink 3, Lose your weapon" )
         val skeletonGEvent = Event("Skeleton Guard", R.drawable.e_skeleton_guard, "A hulking skeleton guard blocks your path," +
-                "it would be staring you down if it had eyes, but it doesn't...", "The guard swings their axe and breaks your weapon in two, you manage to scamper away defenseless.",
+                " it would be staring you down if it had eyes, but it doesn't...", "The guard swings their axe and breaks your weapon in two, you manage to scamper away defenseless.",
             skeletonGBs, null, 2, "You give the skeleton a warm glass of milk for his bones and he lets you pass.",
             "You stab the guard in the skull and it crumples to a pile of bones with a hissing noise. give out 1 drink.",
             85, 100, 60)
         mEvents.add(skeletonGEvent)
-        val adultDragonBs = BadStuff(-2, "c", 5, "", "Take a shot, Lose 2 Points, Charm permanently decreased slightly")
+        val adultDragonBs = BadStuff(-2, "c", -5, "", "Take a shot, Lose 2 Points, Charm Decreased by 5")
         val adultDragonEvent = Event("Scary Fully Grown Dragon", R.drawable.e_adult_dragon,
             "A shadow is cast over the land as a fully grown adult dragon swoops down towards you, it lands and blocks your path, " +
                     "staring at you hungrily.", "The dragon roars and blasts a stream of fire at you, burning all your hair off.",
@@ -134,7 +134,7 @@ object Events {
         mEvents.add(adultDragonEvent)
         val wiseWizardBs = BadStuff(0, "", 0, "", "Drink X")
         val wiseWizardEvent = Event("Wise Wizard of the West", R.drawable.e_wize_wizard,
-            "You come across a wise old wizard in a tavern you blocks your way as he smokes his magical pipe",
+            "You come across a wise old wizard in a tavern whos blocks your way as he smokes his magical pipe",
             "The wizard casts a spell on you, drink X times by playing rock paper scissors with every player," +
                     " every loss adds 2 drinks.", wiseWizardBs, null, 2,
             "You charm the wizard with your beautiful face and give him a kiss, making him blush, give the person to your " +
@@ -181,7 +181,7 @@ object Events {
             "You perform a simple magic trick for the hooligan and he lets you past, dumbfounded.",
             "You stab the hooligan dead and that's the end of it.", 70, 70, 60)
         mEvents.add(hooliganEvent)
-        val hooligansBs = BadStuff(-1, "f", 5, "", "Drink 3, Fight Decreased Slightly, Lose 1 Point")
+        val hooligansBs = BadStuff(-1, "f", -5, "", "Drink 3, Fight Decreased by 5, Lose 1 Point")
         val hooligansEvent = Event("Hooligan Family", R.drawable.e_hooligans,
             "A family of hooligans block your path, they look angry yet also slightly confused.",
             "You are defeated and repeatedly bonked on the head, scrambling your brains.", hooligansBs, null,
@@ -368,9 +368,9 @@ object Events {
             1, "You distract the bats with some fruit and are unscathed by the swarm", "You cut one of the bats out of " +
                     "the air and the rest give up, you are victorious!, give out 2 drinks", 55, 50, 60)
         mEvents.add(batsEvent)
-        val lavaFlow = Event("Lava Flow!!", R.drawable.c_lava_floor, "Surprise lava flow!! Every body must get off the ground," +
-                "the last player touching the ground drinks twice. Everyone must remain off the floor until this card is drawn again, touching the floor" +
-                "results in another 2 drinks","", null, null, 0, "", "", 0,
+        val lavaFlow = Event("Lava Flow!!", R.drawable.c_lava_floor, "Surprise lava flow!! Everybody must get off the ground," +
+                " the last player touching the ground drinks twice. Everyone must remain off the floor until your next turn, touching the floor" +
+                " results in another 2 drinks","", null, null, 0, "", "", 0,
             0, 0, Curse())
         mEvents.add(lavaFlow)
         val mexicanStandoff = Event("Mexican Standoff!!", R.drawable.c_mexican_standoff, "You crack some bad jokes and land yourself in a standoff " +
@@ -421,18 +421,30 @@ object Events {
             "You slice the gold digger in half and it looks pretty mad about it", 60, 60, 60, null)
         mEvents.add(goldDigger)
         val clearPOneOutcome1 = Outcome(0, -1, null, "", 0, "Sucks to be you, it tastes like soap and you throw up everywhere, " +
-                "drink 2 and lose a level")
+                "drink 2 and lose 1 Point")
         val clearPOneOutcome2 = Outcome(0, 0, null, "", 0, "You walk away and leave the potion")
         val clearPOne = SpecialEvent("Drink", "Leave it", clearPOneOutcome1, clearPOneOutcome2)
         val clearPOneEvent = Event("Mystery Potion", R.drawable.c_clear_potion, "You come across a suspicious looking, mysterious looking " +
                 "potion.", "", null, clearPOne, 0, "", "")
         mEvents.add(clearPOneEvent)
-        val clearP2Outcome1 = Outcome(0, 1, null, "", 0, "Wow, that was bloody delicious!! Gain a level, give out 2 drinks")
+        val clearP2Outcome1 = Outcome(0, 1, null, "", 0, "Wow, that was bloody delicious!! Gain 1 Point, give out 2 drinks")
         val clearP2Outcome2 = Outcome(0, 0, null, "", 0, "You walk away and leave the potion")
         val clearP2 = SpecialEvent("Drink", "Leave it", clearP2Outcome1, clearP2Outcome2)
         val clearP2Event = Event("Mystery Potion", R.drawable.c_clear_potion, "You come across a suspicious looking, mysterious looking " +
                 "potion.", "", null, clearP2, 0, "", "")
         mEvents.add(clearP2Event)
+        val clearP3Outcome1 = Outcome(0, 0, null, "f", 10, "It tastes like arse but you feel your muscles absolutely popping, fight increased by 10")
+        val clearP3Outcome2 = Outcome(0, 0, null, "", 0, "You walk away and leave the potion")
+        val clearP3 = SpecialEvent("Drink", "Leave it", clearP3Outcome1, clearP3Outcome2)
+        val clearP3Event = Event("Mystery Potion", R.drawable.c_clear_potion, "You come across a suspicious looking, mysterious looking " +
+                "potion.", "", null, clearP3, 0, "", "")
+        mEvents.add(clearP3Event)
+        val clearP4Outcome1 = Outcome(0, 0, null, "f", -8, "The potion makes you woozy and slow, which sucks, fight decreased by 8")
+        val clearP4Outcome2 = Outcome(0, 0, null, "", 0, "You walk away and leave the potion")
+        val clearP4 = SpecialEvent("Drink", "Leave it", clearP4Outcome1, clearP4Outcome2)
+        val clearP4Event = Event("Mystery Potion", R.drawable.c_clear_potion, "You come across a suspicious looking, mysterious looking " +
+                "potion.", "", null, clearP4, 0, "", "")
+        mEvents.add(clearP4Event)
         return mEvents
     }
 }

@@ -11,13 +11,13 @@
     <dimen name="largest_text_size">22sp</dimen>
     <dimen name="decision_btn_margin_right">5dp</dimen>
     <dimen name="decision_btn_padding">10dp</dimen>
-    <dimen name="splash_icon_margin">70dp</dimen>
+    <dimen name="splash_icon_margin">55dp</dimen>
     <dimen name="splash_icon_marginBottom">200dp</dimen>
     <dimen name="splash_title_text_size">55sp</dimen>
     <dimen name="swords_image_size">250dp</dimen>
     <dimen name="menu_btn_marginHorizontal">50dp</dimen>
     <dimen name="menu_btn_marginVertical">15dp</dimen>
-    <dimen name="menu_btns_marginTop">25dp</dimen>
+    <dimen name="menu_btns_marginTop">100dp</dimen>
     <dimen name="battle_swords_size">200dp</dimen>
     <dimen name="level_text_size">22sp</dimen>
     <dimen name="rv_inventory_height">200dp</dimen>

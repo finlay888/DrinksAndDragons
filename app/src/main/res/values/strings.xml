@@ -44,4 +44,5 @@
     <string name="tutorial2">Kill monsters and complete event cards on your journey and gain status points.</string>
     <string name="tutorial3">Gain awesome loot and treasure from your conquests and equip them in the inventory screen.</string>
     <string name="tutorial4">Drink responsibly and safely, for those 18 and over.</string>
+    <string name="dialog_outcome_title">Outcome</string>
 </resources>

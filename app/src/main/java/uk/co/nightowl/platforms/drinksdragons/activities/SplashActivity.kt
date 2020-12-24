@@ -1,6 +1,5 @@
 package uk.co.nightowl.platforms.drinksdragons.activities
 
-import android.animation.AnimatorSet
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
@@ -8,7 +7,6 @@ import android.graphics.drawable.ColorDrawable
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.view.animation.*
@@ -18,7 +16,6 @@ import kotlinx.android.synthetic.main.activity_splash.*
 import org.angmarch.views.NiceSpinner
 import uk.co.nightowl.platforms.drinksdragons.R
 import uk.co.nightowl.platforms.drinksdragons.dialogs.PlayerDialog
-import uk.co.nightowl.platforms.drinksdragons.objects.Constants
 import java.util.*
 
 class SplashActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
@@ -88,7 +85,7 @@ class SplashActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         val title2 = findViewById<TextView>(R.id.tv_splash_title_and)
         val title3 = findViewById<TextView>(R.id.tv_splash_title_dragons)
         val splashIconOne = findViewById<ImageView>(R.id.iv_splash_icon)
-        val splashIconTwo = findViewById<ImageView>(R.id.iv_swords_icon)
+        val splashIconTwo = findViewById<ImageView>(R.id.iv_adventurer_icon)
         val menuBtns = findViewById<LinearLayout>(R.id.ll_splash_menu_btns)
 
         val basicFadeIn = AnimationUtils.loadAnimation(
