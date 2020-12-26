@@ -11,7 +11,6 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.view.animation.Animation
@@ -23,7 +22,6 @@ import kotlinx.android.synthetic.main.dialog_quit.*
 import uk.co.nightowl.platforms.drinksdragons.R
 import uk.co.nightowl.platforms.drinksdragons.adapters.AcquiredAdapter
 import uk.co.nightowl.platforms.drinksdragons.dialogs.OutcomeDialog
-import uk.co.nightowl.platforms.drinksdragons.dialogs.PlayerDialog
 import uk.co.nightowl.platforms.drinksdragons.objects.Treasure.setTreasure
 import uk.co.nightowl.platforms.drinksdragons.models.*
 import uk.co.nightowl.platforms.drinksdragons.objects.Constants
@@ -62,7 +60,6 @@ class MainActivity : AppCompatActivity() {
         playerList = intent.getParcelableArrayListExtra<Character>(Constants.PLAYERS) as ArrayList<Character>
         mCharacter = playerList[0]
         tv_player_name.text = playerList[0].name
-        Log.i("scoop1", playerList[0].name)
         setUi()
         mTreasure = setTreasure()
         calculateStats()
@@ -83,7 +80,6 @@ class MainActivity : AppCompatActivity() {
         val btnAnim = AnimationUtils.loadAnimation(this, R.anim.btn_bounce)
 
         btn_event.setOnClickListener {
-            Log.i("scoop1", playerList[0].name)
             if (eventBtn){
                 eventBtn = false
                 Handler().postDelayed({
@@ -248,7 +244,6 @@ class MainActivity : AppCompatActivity() {
                 frontAnim.start()
                 backAnim.start()
             }
-            Log.i("continue", playerList[0].name)
             if (currentEvent!!.curse != null){
                 curseResult()
                 fl_event_card.startAnimation(fadeOut)
@@ -273,14 +268,10 @@ class MainActivity : AppCompatActivity() {
     private fun nextTurn(){
         if (playerTurn == playerList.size - 1){
             playerTurn = 0
-            Log.i("woof", playerTurn.toString())
         }else{
             playerTurn += 1
         }
         mCharacter = playerList[playerTurn]
-        Log.i("scoop", playerTurn.toString())
-        Log.i("scoops", playerList.size.toString())
-        Log.i("next turn", playerList[0].name)
         inventory = mCharacter.inventory
         tv_player_name.text = mCharacter.name
         tv_level_number.text = mCharacter.level.toString()
@@ -328,8 +319,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun successCalculator (stat : Int, difficulty : Int) : Boolean {
         val result = generateNumber(difficulty)
-        Log.i("stat", result.toString())
-        Log.i("static", difficulty.toString())
         return stat >= result
     }
 
@@ -506,7 +495,6 @@ class MainActivity : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK && requestCode == Constants.INVENTORY_REQUEST_CODE){
             mCharacter = data?.getParcelableExtra(Constants.CHARACTER)!!
             playerList[playerTurn] = mCharacter
-            Log.i("onActivityResult", playerList[0].name)
         }
     }
 

@@ -30,7 +30,7 @@ object Treasure {
             "Weegie Warrior Helm","Provides great protection from the sharpest of knives", "h", 2, 5, 8, 0,
             R.drawable.t_traffic_cone_helmet)
         treasure.add(trafficCone)
-        val bucketHat = Treasure("Really Cool Bucket Hat", "As soon as you put it on, you feel more vibey already", "h", 2, 0, 10, 0,
+        val bucketHat = Treasure("Really Cool Bucket Hat", "As soon as you put it on, you feel more vibey already", "h", 2, 0, 13, 0,
             R.drawable.t_bucket_hat)
         treasure.add(bucketHat)
         val wolverineGauntlet = Treasure("Wolverine Gauntlet", "Made of Adamantium and totally awesome", "w", 3, 15, 0, 0,
