@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.fragment.app.Fragment
-import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_how_to_play.*
 import uk.co.nightowl.platforms.drinksdragons.R
 import uk.co.nightowl.platforms.drinksdragons.adapters.TutorialViewPagerAdapter
