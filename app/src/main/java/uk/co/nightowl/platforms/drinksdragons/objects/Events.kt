@@ -243,6 +243,8 @@ object Events {
                 "Choose another player, they must drink every time you drink and vice versa.",
             "", null, null, 0, "", "", 0, 0, 0, lovePotionCurse)
         mEvents.add(lovePotionEvent)
+        mEvents.add(lovePotionEvent)
+        mEvents.add(lovePotionEvent)
         val eatSlugsCurse = Curse("", 0, 0)
         val eatSlugsEvent = Event("Eat Slugs!!", R.drawable.c_eat_slugs, "You have been enchanted!! You now have a wild hankering " +
                 "for slimy slugs, that is all", "", null, null, 0, "", "",
@@ -375,7 +377,7 @@ object Events {
                     "the air and the rest give up, you are victorious!, Give out 2 drinks", 55, 50, 60)
         mEvents.add(batsEvent)
         val lavaFlow = Event("Lava Flow!!", R.drawable.c_lava_floor, "Surprise lava flow!! Everybody must get off the ground," +
-                " the last player touching the ground drinks twice. Everyone must remain off the floor until your next turn, touching the floor" +
+                " the last player touching the ground does 1 shot. Everyone must remain off the floor until your next turn, touching the floor" +
                 " results in another 2 drinks","", null, null, 0, "", "", 0,
             0, 0, Curse())
         mEvents.add(lavaFlow)
@@ -451,6 +453,65 @@ object Events {
         val clearP4Event = Event("Mystery Potion", R.drawable.c_clear_potion, "You come across a suspicious looking, mysterious " +
                 "potion.", "", null, clearP4, 0, "", "")
         mEvents.add(clearP4Event)
+        val divineHelpC = Curse("", 5, 5, 1)
+        val divineHelpEvent = Event("The Hand Of God", R.drawable.c_hand_of_god, "The heavens open and god gives you a helping hand, boosting your stats and giving you " +
+                "higher status", "", null, null, 0, "", "", 0, 0, 0, divineHelpC)
+        mEvents.add(divineHelpEvent)
+        val happyMeal = Treasure("A Joyful Meal", "It comes with a toy and everything, it makes everyone a bit happier", "t", 1, 0, 6, 0, R.drawable.t_happy_meal)
+        val armWrestleOutcome1 = Outcome(0, 1, happyMeal,"", 0, "You win your arm wrestle and become champion of the town, gain 1 point")
+        val armWrestleOutcome2 = Outcome(0, 0, null, "", 0, "You lose your arm wrestle and remain a nobody, you get a happy meal ")
+        val armWrestleSpecialEvent = SpecialEvent("Win", "Lose", armWrestleOutcome1, armWrestleOutcome2)
+        val armWrestleEvent = Event("Arm Wrestling Challenge", R.drawable.e_arm_wrestle, "You are challenged to an arm wrestle!! Spin a pen or bottle to decide who you must arm wrestle.",
+            "", null, armWrestleSpecialEvent)
+        mEvents.add(armWrestleEvent)
+        val flyingEyeBs = BadStuff(-1, "", 0, "h", "Lose 1 point, Drink 4")
+        val flyingEyeEvent = Event("Magical Flying Eyeball", R.drawable.e_flying_eyeball, "You hear a whooshing above you to find a magical flying eyeball " +
+                "peering down at you, and waving it's tentacles at you", "The Eyeball squeezes you with it's tentacles and it really hurts, it knocks your hat off and absorbs it",
+            flyingEyeBs, null, 3, "You give a friendly wave at the eyeball and it waves back, letting you past",
+            "You stab the eyeball right in the eyeball and it crumbles to dust and dies", 80, 80, 60)
+        mEvents.add(flyingEyeEvent)
+        val weaponizedShark = Treasure("Weaponized Shark", "This one's a snapper", "w", 3, 15, 0, 0, R.drawable.t_weaponized_shark)
+        val friendlySharkOutcome1 = Outcome(0, -1, weaponizedShark, "", 0, "The shark is true to it's word and gifts you a pet shark to help you on your journey at the cost of one point")
+        val friendlySharkOutcome2 = Outcome(0, 0, null, "", 0, "You leave without taking the deal and the shark looks very disappointed, " +
+                "you seem to have hurt it's feelings")
+        val friendlySharkSpecialEvent = SpecialEvent("Deal", "No Deal", friendlySharkOutcome1, friendlySharkOutcome2)
+        val friendlySharkEvent = Event("A Very Friendly Shark", R.drawable.e_friendly_shark, "A very friendly shark comes to greet you with a magnificent " +
+                "smile, they offer you a deal of one status point for a surprise gift", "", null, friendlySharkSpecialEvent)
+        mEvents.add(friendlySharkEvent)
+        val friendlyShark2Outcome1 = Outcome(0, -1, null, "", 0, "The shark gives you a special potion and you drink it but it does nothing, Lose a point")
+        val friendlyShark2Outcome2 = Outcome(0, 0, null, "", 0, "You leave without taking the deal and the shark looks very disappointed, " +
+                "you seem to have hurt it's feelings")
+        val friendlyShark2SpecialEvent = SpecialEvent("Deal", "No Deal", friendlyShark2Outcome1, friendlyShark2Outcome2)
+        val friendlyShark2Event = Event("A Very Friendly Shark", R.drawable.e_friendly_shark, "A very friendly shark comes to greet you with a magnificent " +
+                "smile, they offer you a deal of one status point for a surprise gift", "", null, friendlyShark2SpecialEvent)
+        mEvents.add(friendlyShark2Event)
+        val friendlyShark3Outcome1 = Outcome(0, -1, happyMeal, "c", 10, "The shark is true to it's word and gifts you a some strange herbs to help you on your journey, you smoke them " +
+                "and become instantly more charming, Charm increased by 10")
+        val friendlyShark3Outcome2 = Outcome(0, 0, null, "", 0, "You leave without taking the deal and the shark looks very disappointed, " +
+                "you seem to have hurt it's feelings")
+        val friendlyShark3SpecialEvent = SpecialEvent("Deal", "No Deal", friendlyShark3Outcome1, friendlyShark3Outcome2)
+        val friendlyShark3Event = Event("A Very Friendly Shark", R.drawable.e_friendly_shark, "A very friendly shark comes to greet you with a magnificent " +
+                "smile, they offer you a deal of one status point for a surprise gift", "", null, friendlyShark3SpecialEvent)
+        mEvents.add(friendlyShark3Event)
+        val mushroomCastleBs = BadStuff(-2, "f", -5, "", "Lose 2 Points, Take 1 shot, Fight decreased by 5") 
+        val mushroomCastleEvent = Event("The Toadstool Towers", R.drawable.e_mushroom_castle, "On your travels through the forest you come across a tiny fortress made out of toadstools and filled with tiny gnomes, they close the gate and " +
+                "look at you suspiciously", "The gnomes pour hot soup on you and it burns your head but it tastes delicious, however it gets your gear all sticky and slows you down", 
+            mushroomCastleBs, null, 0, "You greet the gnomes and offer them some mushroom stroganoff as a good gesture, they accept your gift and allow you to stay the night, Give out 1 shot",
+            "You lay siege to the fortress and it last a number of hours before you topple one of the toadstool towers and the gnomes surrender, Everybody else does a shot", 110, 85, 60)
+        mEvents.add(mushroomCastleEvent)
+        val hellFrogBs = BadStuff(-1, "", 0, "", "Lose 1 point, everybody drinks 3")
+        val hellFrogEvent = Event("Demon Frog", R.drawable.e_hell_frog, "This frog has come all the way from the depths of hell just to make you feel bad about yourself",
+            "The demon frog really hits home and hurts your feelings real bad", hellFrogBs, null, 2,"You hurl your own barrage of insults at the " +
+                    "frog and it tears up, you feel really bad, you should never have brought it's mother into this. Take a shot", "The frog turns into a giant demon and beats the crap out of you",
+                75, 65, 60)
+        mEvents.add(hellFrogEvent)
+        val necromancerBs = BadStuff(-3, "", 0, "", "Lose 3 Points, take X shots")
+        val necromancerEvent = Event("The Necromancer", R.drawable.e_necromancer, "All the animals run and hide, and the air fills with fear as a spooky " +
+                "necromancer rises from the ground, floating towards you ominously", "The necromancer unleashes hordes of the undead upon you and you are overpowered, " +
+                "you never stood a chance, take 1 shot for every status point you have", necromancerBs, null, 6, "You manage to charm the necromancer into allowing you " +
+                "to walk free but at a price, everyone must take 2 shots", "You beat through hordes of skeletons and zombies to slap the necromancer right in the face, " +
+                "you are the saviour of the land, everyone else must take 2 shots", 150, 130, 60)
+        mEvents.add(necromancerEvent)
         return mEvents
     }
 }

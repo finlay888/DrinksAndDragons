@@ -14,6 +14,10 @@ object Treasure {
             "Fancy Steel Plate", "Someone's rather fancy", "c", 2, 6, 2, 0,
                 R.drawable.t_fancy_steel_plate)
         treasure.add(fancySteel)
+        val fancySteelTrousers = Treasure(
+            "Fancy Steel Greaves", "Someone's rather fancy", "l", 2, 6, 2, 0,
+            R.drawable.t_fancy_steel_legs)
+        treasure.add(fancySteelTrousers)
         val woodenChest = Treasure(
             "Wooden Plank", "Plain and simple, mother nature's protection", "c", 1, 5, 0, 0,
                 R.drawable.t_wooden_plank)
@@ -192,6 +196,21 @@ object Treasure {
         val pickaxe = Treasure("Rusty Pickaxe", "It can do more than just mine gold", "w", 1, 4, 0, 0,
             R.drawable.t_pickaxe)
         treasure.add(pickaxe)
+        val cherubWand = Treasure("Lover's Wand", "Even holding it makes your private parts tickle", "w", 2, 0, 12, 0,
+            R.drawable.t_cherub_wand)
+        treasure.add(cherubWand)
+        val lovePants = Treasure("Passion Pants", "Everyone will want a bit of you if you're wearing these", "l", 1, 0, 7, 0,
+            R.drawable.t_lovepants)
+        treasure.add(lovePants)
+        val flySwatter = Treasure("Fly Swatter", "The poor buggers won't stand a chance", "w", 1, 3, 0, 0,
+            R.drawable.t_fly_swatter)
+        treasure.add(flySwatter)
+        val fakeGauntlet = Treasure("Eternity Gauntlet", "It doesn't feel right, it must be a replica", "w", 2, 6, 5, 0,
+            R.drawable.t_infinity_gauntlet)
+        treasure.add(fakeGauntlet)
+        val shortbow = Treasure("Shortbow", "It could be a bit longer but it will do the trick", "w", 1, 5, 0, 0,
+            R.drawable.t_shortbow)
+        treasure.add(shortbow)
         return treasure
     }
 }
